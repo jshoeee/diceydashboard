@@ -137,6 +137,26 @@
             font-weight: 700;
             color: #1d1d1f;
             margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .trend-icon {
+            font-size: 24px;
+            line-height: 1;
+        }
+        
+        .trend-icon.up {
+            color: #34c759;
+        }
+        
+        .trend-icon.down {
+            color: #ff3b30;
+        }
+        
+        .trend-icon.flat {
+            color: #86868b;
         }
         
         .metric-change {
@@ -375,7 +395,10 @@
                 <div class="metric-header">
                     <div class="metric-label">Net Gaming Revenue</div>
                 </div>
-                <div class="metric-value">$112K</div>
+                <div class="metric-value">
+                    $112K
+                    <span class="trend-icon up">↗</span>
+                </div>
                 <div class="metric-change positive">↑ 23% WoW</div>
                 
                 <div class="sub-metrics">
@@ -389,7 +412,7 @@
                     </div>
                     <div class="sub-metric">
                         <span class="sub-metric-label">Incentives</span>
-                        <span class="sub-metric-value">$44K (28%)</span>
+                        <span class="sub-metric-value">$44K</span>
                     </div>
                 </div>
             </div>
@@ -399,7 +422,10 @@
                 <div class="metric-header">
                     <div class="metric-label">Net Deposits</div>
                 </div>
-                <div class="metric-value">$124K</div>
+                <div class="metric-value">
+                    $124K
+                    <span class="trend-icon up">↗</span>
+                </div>
                 <div class="metric-change neutral">↑ 8% WoW</div>
                 
                 <div class="sub-metrics">
@@ -423,7 +449,10 @@
                 <div class="metric-header">
                     <div class="metric-label">Active Bettors (Weekly)</div>
                 </div>
-                <div class="metric-value">1,843</div>
+                <div class="metric-value">
+                    1,843
+                    <span class="trend-icon up">↗</span>
+                </div>
                 <div class="metric-change positive">↑ 31% WoW</div>
                 
                 <div class="sub-metrics">
@@ -433,15 +462,19 @@
                     </div>
                     <div class="sub-metric">
                         <span class="sub-metric-label">D1 Retention</span>
-                        <span class="sub-metric-value">18%</span>
-                    </div>
-                    <div class="sub-metric">
-                        <span class="sub-metric-label">D7 Retention</span>
                         <span class="sub-metric-value">42%</span>
                     </div>
                     <div class="sub-metric">
-                        <span class="sub-metric-label">Median Bets/User</span>
-                        <span class="sub-metric-value">47</span>
+                        <span class="sub-metric-label">D7 Retention</span>
+                        <span class="sub-metric-value">28%</span>
+                    </div>
+                    <div class="sub-metric">
+                        <span class="sub-metric-label">D30 Retention</span>
+                        <span class="sub-metric-value">18%</span>
+                    </div>
+                    <div class="sub-metric">
+                        <span class="sub-metric-label">Median Wager Size</span>
+                        <span class="sub-metric-value">$4.20</span>
                     </div>
                 </div>
             </div>
@@ -483,14 +516,14 @@
             </h3>
             
             <div class="metrics-row">
-                <div class="metric-card yellow">
+                <div class="metric-card green">
                     <div class="metric-header">
                         <div class="metric-label">D1 Second Deposit Rate</div>
                     </div>
-                    <div class="metric-value">18%</div>
-                    <div class="metric-change negative">↓ 4pp WoW</div>
+                    <div class="metric-value">42%</div>
+                    <div class="metric-change positive">↑ 4pp WoW</div>
                     <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                        16 of 90 FTDs deposited again within 24hrs
+                        38 of 90 FTDs deposited again within 24hrs
                     </div>
                 </div>
 
@@ -498,16 +531,27 @@
                     <div class="metric-header">
                         <div class="metric-label">D7 Second Deposit Rate</div>
                     </div>
-                    <div class="metric-value">42%</div>
-                    <div class="metric-change positive">↑ 4pp WoW</div>
+                    <div class="metric-value">28%</div>
+                    <div class="metric-change positive">↑ 2pp WoW</div>
                     <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                        38 of 90 FTDs deposited again within 7 days
+                        25 of 90 FTDs deposited again within 7 days
+                    </div>
+                </div>
+
+                <div class="metric-card green">
+                    <div class="metric-header">
+                        <div class="metric-label">D30 Second Deposit Rate</div>
+                    </div>
+                    <div class="metric-value">18%</div>
+                    <div class="metric-change positive">↑ 1pp WoW</div>
+                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
+                        16 of 90 FTDs deposited again within 30 days
                     </div>
                 </div>
             </div>
 
             <div class="chart-container">
-                <div class="chart-title">D1 & D7 Retention Trend (6 Weeks)</div>
+                <div class="chart-title">D1, D7 & D30 Retention Trend (6 Weeks)</div>
                 <div class="chart-wrapper">
                     <canvas id="retentionChart"></canvas>
                 </div>
@@ -567,10 +611,10 @@
         <div class="insight-box">
             <div class="insight-title">Key Insight</div>
             <div class="insight-text">
-                D1 dip expected — bonus cohort needs 72hrs to clear wager requirements. D7 retention strong at 42% 
-                (above 35% target), indicating real user stickiness. Engagement trending up across all metrics: 
-                users betting deeper (47 bets/session), exploring more games (2.3 games/user), and continuing to 
-                play after withdrawals (68%). Low bonus hunter risk.
+                Strong retention signals across all timeframes. D1 at 42% shows immediate user engagement, 
+                with natural decay to D7 (28%) and D30 (18%) indicating healthy cohort quality. Engagement 
+                trending up across all metrics: users betting deeper (47 bets/session), exploring more games 
+                (2.3 games/user), and continuing to play after withdrawals (68%). Low bonus hunter risk.
             </div>
         </div>
     </div>
@@ -613,39 +657,49 @@
                 This Week's Incentive Spend: $44K
             </h4>
 
-            <div class="breakdown-grid">
-                <!-- Product Incentives -->
-                <div class="breakdown-item">
-                    <div class="breakdown-label">Rakeback</div>
-                    <div class="breakdown-value">$12K</div>
-                    <div class="breakdown-subtext">27% of spend</div>
-                </div>
-                <div class="breakdown-item">
-                    <div class="breakdown-label">Rank Up / Tier Up</div>
-                    <div class="breakdown-value">$4K</div>
-                    <div class="breakdown-subtext">9% of spend</div>
-                </div>
-                <div class="breakdown-item">
-                    <div class="breakdown-label">Be The House</div>
-                    <div class="breakdown-value">$2K</div>
-                    <div class="breakdown-subtext">5% of spend</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center;">
+                <div>
+                    <div style="height: 300px;">
+                        <canvas id="incentivesPieChart"></canvas>
+                    </div>
                 </div>
                 
-                <!-- GTM Incentives -->
-                <div class="breakdown-item">
-                    <div class="breakdown-label">ME Pool Campaign</div>
-                    <div class="breakdown-value">$15K</div>
-                    <div class="breakdown-subtext">34% of spend</div>
-                </div>
-                <div class="breakdown-item">
-                    <div class="breakdown-label">Deposit Bonuses</div>
-                    <div class="breakdown-value">$8K</div>
-                    <div class="breakdown-subtext">18% of spend</div>
-                </div>
-                <div class="breakdown-item">
-                    <div class="breakdown-label">VIP / Manual</div>
-                    <div class="breakdown-value">$3K</div>
-                    <div class="breakdown-subtext">7% of spend</div>
+                <div>
+                    <div style="margin-bottom: 24px;">
+                        <h5 style="font-size: 13px; font-weight: 600; color: #86868b; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Product Incentives (41%)</h5>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
+                                <span style="font-size: 13px; color: #515154;">Rakeback</span>
+                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$12K</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
+                                <span style="font-size: 13px; color: #515154;">Rank Up / Tier Up</span>
+                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$4K</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
+                                <span style="font-size: 13px; color: #515154;">Be The House</span>
+                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$2K</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h5 style="font-size: 13px; font-weight: 600; color: #86868b; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">GTM Incentives (59%)</h5>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
+                                <span style="font-size: 13px; color: #515154;">ME Pool Campaign</span>
+                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$15K</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
+                                <span style="font-size: 13px; color: #515154;">Deposit Bonuses</span>
+                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$8K</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
+                                <span style="font-size: 13px; color: #515154;">VIP / Manual</span>
+                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$3K</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -795,16 +849,23 @@
                 labels: ['Week -5', 'Week -4', 'Week -3', 'Week -2', 'Week -1', 'Current'],
                 datasets: [{
                     label: 'D1 Second Deposit Rate',
-                    data: [19, 21, 23, 22, 22, 18],
-                    borderColor: '#ff9500',
-                    backgroundColor: 'rgba(255, 149, 0, 0.1)',
+                    data: [38, 39, 40, 41, 38, 42],
+                    borderColor: '#34c759',
+                    backgroundColor: 'rgba(52, 199, 89, 0.1)',
                     tension: 0.4,
                     fill: true
                 }, {
                     label: 'D7 Second Deposit Rate',
-                    data: [35, 36, 39, 41, 38, 42],
-                    borderColor: '#34c759',
-                    backgroundColor: 'rgba(52, 199, 89, 0.1)',
+                    data: [25, 26, 27, 28, 26, 28],
+                    borderColor: '#007aff',
+                    backgroundColor: 'rgba(0, 122, 255, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'D30 Second Deposit Rate',
+                    data: [15, 16, 17, 18, 17, 18],
+                    borderColor: '#ff9500',
+                    backgroundColor: 'rgba(255, 149, 0, 0.1)',
                     tension: 0.4,
                     fill: true
                 }]
@@ -944,6 +1005,62 @@
                     },
                     x: {
                         grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Incentives Pie Chart
+        const incentivesPieCtx = document.getElementById('incentivesPieChart').getContext('2d');
+        new Chart(incentivesPieCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['ME Pool', 'Rakeback', 'Deposit Bonuses', 'Rank/Tier Up', 'VIP/Manual', 'Be The House'],
+                datasets: [{
+                    data: [15, 12, 8, 4, 3, 2],
+                    backgroundColor: [
+                        '#007aff',
+                        '#34c759',
+                        '#5856d6',
+                        '#ff9500',
+                        '#ff2d55',
+                        '#ffcc00'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 12,
+                            font: {
+                                size: 12
+                            },
+                            generateLabels: function(chart) {
+                                const data = chart.data;
+                                return data.labels.map((label, i) => ({
+                                    text: label + ' ($' + data.datasets[0].data[i] + 'K)',
+                                    fillStyle: data.datasets[0].backgroundColor[i],
+                                    hidden: false,
+                                    index: i
+                                }));
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value / total) * 100).toFixed(0);
+                                return label + ': $' + value + 'K (' + percentage + '%)';
+                            }
+                        }
                     }
                 }
             }

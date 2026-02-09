@@ -411,8 +411,12 @@
                         <span class="sub-metric-value">$14K (9%)</span>
                     </div>
                     <div class="sub-metric">
-                        <span class="sub-metric-label">Incentives</span>
-                        <span class="sub-metric-value">$44K</span>
+                        <span class="sub-metric-label">Attributed CAC</span>
+                        <span class="sub-metric-value">$26K</span>
+                    </div>
+                    <div class="sub-metric">
+                        <span class="sub-metric-label">Unattributed CAC</span>
+                        <span class="sub-metric-value">$3K</span>
                     </div>
                 </div>
             </div>
@@ -430,12 +434,12 @@
                 
                 <div class="sub-metrics">
                     <div class="sub-metric">
-                        <span class="sub-metric-label">Gross Deposits</span>
-                        <span class="sub-metric-value">$187K</span>
+                        <span class="sub-metric-label">From FTDs</span>
+                        <span class="sub-metric-value">$45K (90 users)</span>
                     </div>
                     <div class="sub-metric">
-                        <span class="sub-metric-label">Withdrawals</span>
-                        <span class="sub-metric-value">$63K</span>
+                        <span class="sub-metric-label">From Existing Users</span>
+                        <span class="sub-metric-value">$79K</span>
                     </div>
                     <div class="sub-metric">
                         <span class="sub-metric-label">Withdrawal Rate</span>
@@ -457,24 +461,12 @@
                 
                 <div class="sub-metrics">
                     <div class="sub-metric">
-                        <span class="sub-metric-label">First Time Depositors</span>
-                        <span class="sub-metric-value">90</span>
+                        <span class="sub-metric-label">First Time Active</span>
+                        <span class="sub-metric-value">85 users</span>
                     </div>
                     <div class="sub-metric">
-                        <span class="sub-metric-label">D1 Retention</span>
-                        <span class="sub-metric-value">42%</span>
-                    </div>
-                    <div class="sub-metric">
-                        <span class="sub-metric-label">D7 Retention</span>
-                        <span class="sub-metric-value">28%</span>
-                    </div>
-                    <div class="sub-metric">
-                        <span class="sub-metric-label">D30 Retention</span>
-                        <span class="sub-metric-value">18%</span>
-                    </div>
-                    <div class="sub-metric">
-                        <span class="sub-metric-label">Median Wager Size</span>
-                        <span class="sub-metric-value">$4.20</span>
+                        <span class="sub-metric-label">Bets per Session</span>
+                        <span class="sub-metric-value">47</span>
                     </div>
                 </div>
             </div>
@@ -492,14 +484,80 @@
         <div class="insight-box">
             <div class="insight-title">Key Insight</div>
             <div class="insight-text">
-                Strongest growth week since launch. NGR up 23% WoW driven by Casino growth ($89K → $112K). 
-                Active bettors up 31% with healthy retention signals. Net deposits normalizing as campaigns wind down 
-                — ME pool v2 launching Thursday to maintain momentum.
+                Strongest growth week since launch. NGR up 23% WoW driven by Casino growth. New user acquisition 
+                strong with $45K in FTD deposits (90 users, 85 activated). Existing user deposits at $79K showing 
+                healthy retention. Active bettors up 31% with 94% activation rate (85 of 90 FTDs placed bets).
             </div>
         </div>
     </div>
 
-    <!-- USER QUALITY -->
+    <!-- ENGAGEMENT (DEPTH OF SESSION) -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-title">📈 Engagement</span>
+            <span class="status-badge green">
+                <span class="status-dot green"></span>
+                Strong
+            </span>
+        </div>
+
+        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
+            Depth of Session
+        </h3>
+        
+        <div class="metrics-row">
+            <div class="metric-card green">
+                <div class="metric-header">
+                    <div class="metric-label">Bets per Session</div>
+                </div>
+                <div class="metric-value">47</div>
+                <div class="metric-change positive">↑ 9% WoW</div>
+                <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
+                    Target: 40+ (in "machine zone")
+                </div>
+            </div>
+
+            <div class="metric-card green">
+                <div class="metric-header">
+                    <div class="metric-label">Wager After First Withdrawal</div>
+                </div>
+                <div class="metric-value">68%</div>
+                <div class="metric-change positive">↑ 3pp WoW</div>
+                <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
+                    Users who keep playing after cashing out
+                </div>
+            </div>
+
+            <div class="metric-card green">
+                <div class="metric-header">
+                    <div class="metric-label">Games per User per Session</div>
+                </div>
+                <div class="metric-value">2.3</div>
+                <div class="metric-change positive">↑ 0.2 WoW</div>
+                <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
+                    Target: 2.5+ (exploring vs grinding)
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-title">Engagement Metrics Trend (8 Weeks)</div>
+            <div class="chart-wrapper">
+                <canvas id="engagementChart"></canvas>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-title">Key Insight</div>
+            <div class="insight-text">
+                Engagement trending up across all metrics: users betting deeper (47 bets/session, +9% WoW), 
+                exploring more games (2.3 games/user, +0.2 WoW), and continuing to play after withdrawals 
+                (68%, +3pp). Strong session depth indicates users entering "machine zone" state.
+            </div>
+        </div>
+    </div>
+
+    <!-- USER QUALITY (RETENTION) -->
     <div class="section">
         <div class="section-header">
             <span class="section-title">👥 User Quality</span>
@@ -558,63 +616,13 @@
             </div>
         </div>
 
-        <!-- Engagement Section -->
-        <div>
-            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
-                Engagement (Depth of session)
-            </h3>
-            
-            <div class="metrics-row">
-                <div class="metric-card green">
-                    <div class="metric-header">
-                        <div class="metric-label">Bets per Session</div>
-                    </div>
-                    <div class="metric-value">47</div>
-                    <div class="metric-change positive">↑ 9% WoW</div>
-                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                        Target: 40+ (in "machine zone")
-                    </div>
-                </div>
-
-                <div class="metric-card green">
-                    <div class="metric-header">
-                        <div class="metric-label">Wager After First Withdrawal</div>
-                    </div>
-                    <div class="metric-value">68%</div>
-                    <div class="metric-change positive">↑ 3pp WoW</div>
-                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                        Users who keep playing after cashing out
-                    </div>
-                </div>
-
-                <div class="metric-card green">
-                    <div class="metric-header">
-                        <div class="metric-label">Games per User per Session</div>
-                    </div>
-                    <div class="metric-value">2.3</div>
-                    <div class="metric-change positive">↑ 0.2 WoW</div>
-                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                        Target: 2.5+ (exploring vs grinding)
-                    </div>
-                </div>
-            </div>
-
-            <div class="chart-container">
-                <div class="chart-title">Engagement Metrics Trend (8 Weeks)</div>
-                <div class="chart-wrapper">
-                    <canvas id="engagementChart"></canvas>
-                </div>
-            </div>
-        </div>
-
         <!-- Insight -->
         <div class="insight-box">
             <div class="insight-title">Key Insight</div>
             <div class="insight-text">
                 Strong retention signals across all timeframes. D1 at 42% shows immediate user engagement, 
-                with natural decay to D7 (28%) and D30 (18%) indicating healthy cohort quality. Engagement 
-                trending up across all metrics: users betting deeper (47 bets/session), exploring more games 
-                (2.3 games/user), and continuing to play after withdrawals (68%). Low bonus hunter risk.
+                with natural decay to D7 (28%) and D30 (18%) indicating healthy cohort quality. Users who 
+                deposit a second time within 24 hours show 3-4x higher long-term retention.
             </div>
         </div>
     </div>
@@ -646,71 +654,76 @@
                 </div>
             </div>
 
-            <div class="chart-container" style="margin-bottom: 20px;">
+            <div class="chart-container" style="margin-bottom: 24px;">
                 <div class="chart-title">NGR/GGR Efficiency Trend (8 Weeks)</div>
                 <div class="chart-wrapper">
                     <canvas id="efficiencyChart"></canvas>
                 </div>
             </div>
 
-            <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #1d1d1f;">
-                This Week's Incentive Spend: $44K
-            </h4>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center;">
-                <div>
-                    <div style="height: 300px;">
-                        <canvas id="incentivesPieChart"></canvas>
+            <!-- Acquisition Spend -->
+            <div style="background: #fafafa; padding: 20px; border-radius: 10px; margin-bottom: 16px;">
+                <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f; display: flex; align-items: center; gap: 8px;">
+                    <span style="color: #007aff;">📍</span> Acquisition Spend: $26K (59% of total)
+                </h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                    <div style="background: white; padding: 12px; border-radius: 8px;">
+                        <div style="font-size: 12px; color: #86868b; margin-bottom: 4px;">Attributed CAC</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #1d1d1f;">$23K</div>
+                        <div style="font-size: 11px; color: #515154; margin-top: 4px;">Campaigns + deposit bonuses</div>
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 8px;">
+                        <div style="font-size: 12px; color: #86868b; margin-bottom: 4px;">Unattributed CAC</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #1d1d1f;">$3K</div>
+                        <div style="font-size: 11px; color: #515154; margin-top: 4px;">Brand/marketing (placeholder)</div>
                     </div>
                 </div>
                 
-                <div>
-                    <div style="margin-bottom: 24px;">
-                        <h5 style="font-size: 13px; font-weight: 600; color: #86868b; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Product Incentives (41%)</h5>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
-                                <span style="font-size: 13px; color: #515154;">Rakeback</span>
-                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$12K</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
-                                <span style="font-size: 13px; color: #515154;">Rank Up / Tier Up</span>
-                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$4K</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
-                                <span style="font-size: 13px; color: #515154;">Be The House</span>
-                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$2K</span>
-                            </div>
+                <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e5e7;">
+                    <div style="font-size: 12px; font-weight: 600; color: #86868b; margin-bottom: 8px;">Attributed Breakdown:</div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                            <span style="color: #515154;">ME Pool Campaign</span>
+                            <span style="font-weight: 600; color: #1d1d1f;">$15K</span>
                         </div>
-                    </div>
-                    
-                    <div>
-                        <h5 style="font-size: 13px; font-weight: 600; color: #86868b; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">GTM Incentives (59%)</h5>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
-                                <span style="font-size: 13px; color: #515154;">ME Pool Campaign</span>
-                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$15K</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
-                                <span style="font-size: 13px; color: #515154;">Deposit Bonuses</span>
-                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$8K</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: 8px; background: white; border-radius: 6px;">
-                                <span style="font-size: 13px; color: #515154;">VIP / Manual</span>
-                                <span style="font-size: 14px; font-weight: 600; color: #1d1d1f;">$3K</span>
-                            </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                            <span style="color: #515154;">Deposit Bonuses</span>
+                            <span style="font-weight: 600; color: #1d1d1f;">$8K</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div style="margin-top: 16px; padding: 16px; background: #fafafa; border-radius: 8px;">
-                <div style="font-size: 13px; color: #86868b; margin-bottom: 8px;">Spend Mix</div>
-                <div style="font-size: 14px; color: #1d1d1f;">
-                    <strong>Product:</strong> $18K (41% - Retention) &nbsp;|&nbsp; 
-                    <strong>GTM:</strong> $26K (59% - Acquisition)
+            <!-- Engagement Spend -->
+            <div style="background: #fafafa; padding: 20px; border-radius: 10px;">
+                <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f; display: flex; align-items: center; gap: 8px;">
+                    <span style="color: #34c759;">🎯</span> Engagement Spend: $18K (41% of total)
+                </h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+                    <div style="background: white; padding: 12px; border-radius: 8px;">
+                        <div style="font-size: 12px; color: #86868b; margin-bottom: 4px;">Rakeback</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #1d1d1f;">$12K</div>
+                        <div style="font-size: 11px; color: #515154; margin-top: 4px;">67% of engagement</div>
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 8px;">
+                        <div style="font-size: 12px; color: #86868b; margin-bottom: 4px;">Rank/Tier Up</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #1d1d1f;">$4K</div>
+                        <div style="font-size: 11px; color: #515154; margin-top: 4px;">22% of engagement</div>
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 8px;">
+                        <div style="font-size: 12px; color: #86868b; margin-bottom: 4px;">Be The House</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #1d1d1f;">$2K</div>
+                        <div style="font-size: 11px; color: #515154; margin-top: 4px;">11% of engagement</div>
+                    </div>
                 </div>
-                <div style="font-size: 12px; color: #86868b; margin-top: 8px;">
-                    → Spending weighted toward acquisition, appropriate for growth stage
+            </div>
+
+            <div style="margin-top: 16px; padding: 16px; background: #f0f7ff; border-radius: 8px; border-left: 4px solid #007aff;">
+                <div style="font-size: 13px; color: #1d1d1f;">
+                    <strong>Total Spend:</strong> $44K this week (28% of GGR)<br>
+                    <strong>Split:</strong> 59% acquisition, 41% engagement — weighted toward acquisition, appropriate for growth stage
                 </div>
             </div>
         </div>
@@ -1005,62 +1018,6 @@
                     },
                     x: {
                         grid: { display: false }
-                    }
-                }
-            }
-        });
-
-        // Incentives Pie Chart
-        const incentivesPieCtx = document.getElementById('incentivesPieChart').getContext('2d');
-        new Chart(incentivesPieCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['ME Pool', 'Rakeback', 'Deposit Bonuses', 'Rank/Tier Up', 'VIP/Manual', 'Be The House'],
-                datasets: [{
-                    data: [15, 12, 8, 4, 3, 2],
-                    backgroundColor: [
-                        '#007aff',
-                        '#34c759',
-                        '#5856d6',
-                        '#ff9500',
-                        '#ff2d55',
-                        '#ffcc00'
-                    ],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            padding: 12,
-                            font: {
-                                size: 12
-                            },
-                            generateLabels: function(chart) {
-                                const data = chart.data;
-                                return data.labels.map((label, i) => ({
-                                    text: label + ' ($' + data.datasets[0].data[i] + 'K)',
-                                    fillStyle: data.datasets[0].backgroundColor[i],
-                                    hidden: false,
-                                    index: i
-                                }));
-                            }
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                const label = context.label || '';
-                                const value = context.parsed || 0;
-                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                const percentage = ((value / total) * 100).toFixed(0);
-                                return label + ': $' + value + 'K (' + percentage + '%)';
-                            }
-                        }
                     }
                 }
             }

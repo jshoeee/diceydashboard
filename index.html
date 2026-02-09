@@ -403,8 +403,12 @@
                 
                 <div class="sub-metrics">
                     <div class="sub-metric">
-                        <span class="sub-metric-label">Casino GGR</span>
-                        <span class="sub-metric-value">$142K (91%)</span>
+                        <span class="sub-metric-label">Originals GGR</span>
+                        <span class="sub-metric-value">$48K (31%)</span>
+                    </div>
+                    <div class="sub-metric">
+                        <span class="sub-metric-label">Slots GGR</span>
+                        <span class="sub-metric-value">$94K (60%)</span>
                     </div>
                     <div class="sub-metric">
                         <span class="sub-metric-label">Sports GGR</span>
@@ -501,9 +505,57 @@
             </span>
         </div>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
-            Depth of Session
-        </h3>
+        <!-- Active Bettors Breakdown -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
+                Active Bettors by Game Type
+            </h3>
+            
+            <div class="metrics-row">
+                <div class="metric-card green">
+                    <div class="metric-header">
+                        <div class="metric-label">Originals Bettors</div>
+                    </div>
+                    <div class="metric-value">892</div>
+                    <div class="metric-change positive">↑ 28% WoW</div>
+                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
+                        48% of weekly active bettors
+                    </div>
+                </div>
+
+                <div class="metric-card green">
+                    <div class="metric-header">
+                        <div class="metric-label">Slots Bettors</div>
+                    </div>
+                    <div class="metric-value">1,124</div>
+                    <div class="metric-change positive">↑ 35% WoW</div>
+                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
+                        61% of weekly active bettors
+                    </div>
+                </div>
+
+                <div class="metric-card green">
+                    <div class="metric-header">
+                        <div class="metric-label">Sports Bettors</div>
+                    </div>
+                    <div class="metric-value">287</div>
+                    <div class="metric-change positive">↑ 18% WoW</div>
+                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
+                        16% of weekly active bettors
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 12px; padding: 12px 16px; background: #fafafa; border-radius: 8px; font-size: 13px; color: #515154;">
+                <strong>Note:</strong> Users can bet across multiple game types. Total = 1,843 unique active bettors.
+            </div>
+        </div>
+
+        <!-- Session Depth -->
+        <div>
+            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
+                Depth of Session
+            </h3>
         
         <div class="metrics-row">
             <div class="metric-card green">
@@ -546,13 +598,15 @@
                 <canvas id="engagementChart"></canvas>
             </div>
         </div>
+        </div>
 
         <div class="insight-box">
             <div class="insight-title">Key Insight</div>
             <div class="insight-text">
                 Engagement trending up across all metrics: users betting deeper (47 bets/session, +9% WoW), 
                 exploring more games (2.3 games/user, +0.2 WoW), and continuing to play after withdrawals 
-                (68%, +3pp). Strong session depth indicates users entering "machine zone" state.
+                (68%, +3pp). Strong session depth indicates users entering "machine zone" state. Slots driving 
+                majority of engagement (61% of bettors), with Originals showing strong growth (+28% WoW).
             </div>
         </div>
     </div>

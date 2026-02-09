@@ -189,23 +189,73 @@
             margin-top: 16px;
             padding-top: 16px;
             border-top: 1px solid #e5e5e7;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
         }
         
         .sub-metric {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 6px 0;
-            font-size: 13px;
+            flex-direction: column;
+            gap: 4px;
+            padding: 0;
         }
         
         .sub-metric-label {
-            color: #515154;
+            color: #86868b;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-weight: 600;
         }
         
         .sub-metric-value {
             font-weight: 600;
             color: #1d1d1f;
+            font-size: 15px;
+        }
+        
+        .sub-metric-change {
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .sub-metric-change.positive {
+            color: #34c759;
+        }
+        
+        .sub-metric-change.negative {
+            color: #ff3b30;
+        }
+        
+        .sub-metric-change.neutral {
+            color: #86868b;
+        }
+        
+        .wow-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+        
+        .wow-indicator.positive {
+            background: #d1f4e0;
+            color: #0a7d3e;
+        }
+        
+        .wow-indicator.negative {
+            background: #ffd9d9;
+            color: #c41e3a;
+        }
+        
+        .wow-indicator.neutral {
+            background: #e5e5e7;
+            color: #515154;
         }
         
         .chart-container {
@@ -415,12 +465,8 @@
                         <span class="sub-metric-value">$14K (9%)</span>
                     </div>
                     <div class="sub-metric">
-                        <span class="sub-metric-label">Attributed CAC</span>
-                        <span class="sub-metric-value">$26K</span>
-                    </div>
-                    <div class="sub-metric">
-                        <span class="sub-metric-label">Unattributed CAC</span>
-                        <span class="sub-metric-value">$3K</span>
+                        <span class="sub-metric-label">In-Product Incentives</span>
+                        <span class="sub-metric-value">$18K</span>
                     </div>
                 </div>
             </div>
@@ -438,12 +484,14 @@
                 
                 <div class="sub-metrics">
                     <div class="sub-metric">
-                        <span class="sub-metric-label">From FTDs</span>
-                        <span class="sub-metric-value">$45K (90 users)</span>
+                        <span class="sub-metric-label">From FTD</span>
+                        <span class="sub-metric-value">$45K • 90 users</span>
+                        <span class="sub-metric-change positive">↑ 52% WoW</span>
                     </div>
                     <div class="sub-metric">
                         <span class="sub-metric-label">From Existing Users</span>
                         <span class="sub-metric-value">$79K</span>
+                        <span class="sub-metric-change positive">↑ 18% WoW</span>
                     </div>
                     <div class="sub-metric">
                         <span class="sub-metric-label">Withdrawal Rate</span>
@@ -467,6 +515,7 @@
                     <div class="sub-metric">
                         <span class="sub-metric-label">First Time Active</span>
                         <span class="sub-metric-value">85 users</span>
+                        <span class="sub-metric-change positive">↑ 45% WoW</span>
                     </div>
                     <div class="sub-metric">
                         <span class="sub-metric-label">Bets per Session</span>
@@ -478,7 +527,7 @@
 
         <!-- Charts -->
         <div class="chart-container">
-            <div class="chart-title">8-Week Trend: NGR & Active Bettors</div>
+            <div class="chart-title">8-Week Trend: Net Deposits & Active Bettors</div>
             <div class="chart-wrapper">
                 <canvas id="toplineChart"></canvas>
             </div>
@@ -491,6 +540,172 @@
                 Strongest growth week since launch. NGR up 23% WoW driven by Casino growth. New user acquisition 
                 strong with $45K in FTD deposits (90 users, 85 activated). Existing user deposits at $79K showing 
                 healthy retention. Active bettors up 31% with 94% activation rate (85 of 90 FTDs placed bets).
+            </div>
+        </div>
+    </div>
+
+    <!-- ACQUISITION DEEP DIVE -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-title">📍 Acquisition Deep Dive</span>
+            <span class="status-badge green">
+                <span class="status-dot green"></span>
+                Strong
+            </span>
+        </div>
+
+        <!-- Topline Acquisition Metrics -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
+                Topline Acquisition Metrics
+            </h3>
+            
+            <div class="metrics-row">
+                <div class="metric-card green">
+                    <div class="metric-header">
+                        <div class="metric-label">Casino FTD</div>
+                    </div>
+                    <div class="metric-value">78</div>
+                    <div class="metric-change positive">↑ 48% WoW</div>
+                    
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e5e7;">
+                        <div style="font-size: 12px; color: #86868b; margin-bottom: 4px;">Net Deposits</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #1d1d1f;">$38K</div>
+                        <div style="font-size: 11px; font-weight: 600; color: #34c759; margin-top: 4px;">↑ 52% WoW</div>
+                    </div>
+                </div>
+
+                <div class="metric-card green">
+                    <div class="metric-header">
+                        <div class="metric-label">Sports FTD</div>
+                    </div>
+                    <div class="metric-value">12</div>
+                    <div class="metric-change positive">↑ 25% WoW</div>
+                    
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e5e7;">
+                        <div style="font-size: 12px; color: #86868b; margin-bottom: 4px;">Net Deposits</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #1d1d1f;">$7K</div>
+                        <div style="font-size: 11px; font-weight: 600; color: #34c759; margin-top: 4px;">↑ 30% WoW</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">8-Week Trend: Casino FTD vs Sports FTD</div>
+                <div class="chart-wrapper">
+                    <canvas id="acquisitionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- By Channel -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
+                By Channel
+            </h3>
+            
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; background: #fafafa; border-radius: 10px; overflow: hidden;">
+                    <thead>
+                        <tr style="background: #f5f5f7; border-bottom: 2px solid #e5e5e7;">
+                            <th style="padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px;">Channel</th>
+                            <th style="padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px;">FTDs</th>
+                            <th style="padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px;">Net Deposits</th>
+                            <th style="padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px;">Spend</th>
+                            <th style="padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px;">CAC</th>
+                            <th style="padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px;">CAC/NGR</th>
+                            <th style="padding: 12px 16px; text-align: center; font-size: 11px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Streamers Row -->
+                        <tr style="border-bottom: 1px solid #e5e5e7;">
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">🎮 Streamers</td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 600; color: #1d1d1f;">42</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 600;">(+55%)</div>
+                            </td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 600; color: #1d1d1f;">$18.2K</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 600;">(+60%)</div>
+                            </td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">$8.2K</td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">$195</td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">0.43x</td>
+                            <td style="padding: 16px; text-align: center; font-size: 20px;">🟢</td>
+                        </tr>
+                        <!-- VIPs Row -->
+                        <tr style="border-bottom: 1px solid #e5e5e7;">
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">👔 VIPs</td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 600; color: #1d1d1f;">28</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 600;">(+40%)</div>
+                            </td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 600; color: #1d1d1f;">$14.8K</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 600;">(+45%)</div>
+                            </td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">$6.5K</td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">$232</td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">0.44x</td>
+                            <td style="padding: 16px; text-align: center; font-size: 20px;">🟢</td>
+                        </tr>
+                        <!-- Cappers Row -->
+                        <tr style="border-bottom: 1px solid #e5e5e7;">
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">📊 Cappers</td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 600; color: #1d1d1f;">15</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 600;">(+20%)</div>
+                            </td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 600; color: #1d1d1f;">$7.2K</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 600;">(+18%)</div>
+                            </td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">$4.1K</td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">$273</td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">0.57x</td>
+                            <td style="padding: 16px; text-align: center; font-size: 20px;">🟡</td>
+                        </tr>
+                        <!-- Other Row -->
+                        <tr style="border-bottom: 1px solid #e5e5e7;">
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">📱 Other</td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 600; color: #1d1d1f;">5</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 600;">(+25%)</div>
+                            </td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 600; color: #1d1d1f;">$4.8K</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 600;">(+22%)</div>
+                            </td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">$2.8K</td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">$560</td>
+                            <td style="padding: 16px; font-weight: 600; color: #1d1d1f;">1.17x</td>
+                            <td style="padding: 16px; text-align: center; font-size: 20px;">🔴</td>
+                        </tr>
+                        <!-- Total Row -->
+                        <tr style="background: #f5f5f7; font-weight: 700;">
+                            <td style="padding: 16px; font-weight: 700; color: #1d1d1f;">TOTAL</td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 700; color: #1d1d1f;">90</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 700;">(+45%)</div>
+                            </td>
+                            <td style="padding: 16px;">
+                                <div style="font-weight: 700; color: #1d1d1f;">$45K</div>
+                                <div style="font-size: 11px; color: #34c759; font-weight: 700;">(+52%)</div>
+                            </td>
+                            <td style="padding: 16px; font-weight: 700; color: #1d1d1f;">$21.6K</td>
+                            <td style="padding: 16px; font-weight: 700; color: #1d1d1f;">$240</td>
+                            <td style="padding: 16px; font-weight: 700; color: #1d1d1f;">0.48x</td>
+                            <td style="padding: 16px;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 16px; padding: 16px; background: #fafafa; border-radius: 8px; font-size: 13px; color: #515154;">
+                <strong>Spend Breakdown:</strong><br>
+                • Attributed Spend: $18.8K (campaigns + deposit bonuses)<br>
+                • Unattributed Spend: $2.8K (brand/marketing - directional)
             </div>
         </div>
     </div>
@@ -843,15 +1058,15 @@
         Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
         Chart.defaults.color = '#86868b';
 
-        // Topline Chart (NGR + Active Bettors)
+        // Topline Chart (Net Deposits + Active Bettors)
         const toplineCtx = document.getElementById('toplineChart').getContext('2d');
         new Chart(toplineCtx, {
             type: 'line',
             data: {
                 labels: ['Dec 9', 'Dec 16', 'Dec 23', 'Dec 30', 'Jan 6', 'Jan 13', 'Jan 20', 'Jan 27'],
                 datasets: [{
-                    label: 'NGR ($K)',
-                    data: [45, 52, 58, 67, 78, 89, 91, 112],
+                    label: 'Net Deposits ($K)',
+                    data: [68, 78, 85, 94, 102, 115, 115, 124],
                     borderColor: '#007aff',
                     backgroundColor: 'rgba(0, 122, 255, 0.1)',
                     yAxisID: 'y',
@@ -887,7 +1102,7 @@
                         position: 'left',
                         title: {
                             display: true,
-                            text: 'NGR ($K)'
+                            text: 'Net Deposits ($K)'
                         },
                         grid: { color: '#e5e5e7' }
                     },
@@ -900,6 +1115,53 @@
                             text: 'Active Bettors'
                         },
                         grid: { drawOnChartArea: false }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Acquisition Chart (Casino FTD vs Sports FTD)
+        const acquisitionCtx = document.getElementById('acquisitionChart').getContext('2d');
+        new Chart(acquisitionCtx, {
+            type: 'line',
+            data: {
+                labels: ['Dec 9', 'Dec 16', 'Dec 23', 'Dec 30', 'Jan 6', 'Jan 13', 'Jan 20', 'Jan 27'],
+                datasets: [{
+                    label: 'Casino FTD',
+                    data: [38, 42, 48, 52, 58, 65, 53, 78],
+                    borderColor: '#007aff',
+                    backgroundColor: 'rgba(0, 122, 255, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Sports FTD',
+                    data: [6, 7, 8, 9, 10, 11, 10, 12],
+                    borderColor: '#ff9500',
+                    backgroundColor: 'rgba(255, 149, 0, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'FTDs'
+                        },
+                        grid: { color: '#e5e5e7' }
                     },
                     x: {
                         grid: { display: false }

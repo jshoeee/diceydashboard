@@ -514,14 +514,24 @@
                         <span class="sub-metric-change positive">↑ 18% WoW</span>
                     </div>
                     <div class="sub-metric">
-                        <span class="sub-metric-label"># of Existing Users</span>
-                        <span class="sub-metric-value">1,758 users</span>
-                        <span class="sub-metric-change positive">↑ 28% WoW</span>
+                        <span class="sub-metric-label">Weekly Active Bettors</span>
+                        <span class="sub-metric-value">1,843 users</span>
+                        <span class="sub-metric-change positive">↑ 31% WoW</span>
+                    </div>
+                    <div class="sub-metric">
+                        <span class="sub-metric-label">Sessions per User per Week</span>
+                        <span class="sub-metric-value">2.8</span>
+                        <span class="sub-metric-change positive">↑ 0.3 WoW</span>
                     </div>
                     <div class="sub-metric">
                         <span class="sub-metric-label">Bets per Session</span>
                         <span class="sub-metric-value">47</span>
                         <span class="sub-metric-change positive">↑ 9% WoW</span>
+                    </div>
+                    <div class="sub-metric">
+                        <span class="sub-metric-label">Withdrawal Rate</span>
+                        <span class="sub-metric-value">34%</span>
+                        <span class="sub-metric-change neutral">↓ 2pp WoW</span>
                     </div>
                 </div>
             </div>
@@ -798,76 +808,6 @@
         </div>
     </div>
 
-    <!-- USER QUALITY (RETENTION) -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-title">👥 User Quality</span>
-            <span class="status-badge green">
-                <span class="status-dot green"></span>
-                Strong
-            </span>
-        </div>
-
-        <!-- Retention Section -->
-        <div style="margin-bottom: 32px;">
-            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
-                Retention (Are they sticky?)
-            </h3>
-            
-            <div class="metrics-row">
-                <div class="metric-card green">
-                    <div class="metric-header">
-                        <div class="metric-label">D1 Second Deposit Rate</div>
-                    </div>
-                    <div class="metric-value">42%</div>
-                    <div class="metric-change positive">↑ 4pp WoW</div>
-                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                        38 of 90 FTDs deposited again within 24hrs
-                    </div>
-                </div>
-
-                <div class="metric-card green">
-                    <div class="metric-header">
-                        <div class="metric-label">D7 Second Deposit Rate</div>
-                    </div>
-                    <div class="metric-value">28%</div>
-                    <div class="metric-change positive">↑ 2pp WoW</div>
-                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                        25 of 90 FTDs deposited again within 7 days
-                    </div>
-                </div>
-
-                <div class="metric-card green">
-                    <div class="metric-header">
-                        <div class="metric-label">D30 Second Deposit Rate</div>
-                    </div>
-                    <div class="metric-value">18%</div>
-                    <div class="metric-change positive">↑ 1pp WoW</div>
-                    <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                        16 of 90 FTDs deposited again within 30 days
-                    </div>
-                </div>
-            </div>
-
-            <div class="chart-container">
-                <div class="chart-title">D1, D7 & D30 Retention Trend (6 Weeks)</div>
-                <div class="chart-wrapper">
-                    <canvas id="retentionChart"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <!-- Insight -->
-        <div class="insight-box">
-            <div class="insight-title">Key Insight</div>
-            <div class="insight-text">
-                Strong retention signals across all timeframes. D1 at 42% shows immediate user engagement, 
-                with natural decay to D7 (28%) and D30 (18%) indicating healthy cohort quality. Users who 
-                deposit a second time within 24 hours show 3-4x higher long-term retention.
-            </div>
-        </div>
-    </div>
-
     <!-- RISK & OPERATIONS -->
     <div class="section">
         <div class="section-header">
@@ -881,26 +821,8 @@
         <!-- Incentives Section -->
         <div style="margin-bottom: 32px;">
             <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #1d1d1f;">
-                Incentives & Efficiency
+                Incentives Breakdown
             </h3>
-            
-            <div class="metric-card green" style="margin-bottom: 16px;">
-                <div class="metric-header">
-                    <div class="metric-label">NGR/GGR Efficiency Ratio</div>
-                </div>
-                <div class="metric-value">72%</div>
-                <div class="metric-change positive">↑ 2pp WoW</div>
-                <div style="margin-top: 12px; font-size: 13px; color: #86868b;">
-                    Target: 60-75% | Keeping $0.72 per $1 wagered
-                </div>
-            </div>
-
-            <div class="chart-container" style="margin-bottom: 24px;">
-                <div class="chart-title">NGR/GGR Efficiency Trend (8 Weeks)</div>
-                <div class="chart-wrapper">
-                    <canvas id="efficiencyChart"></canvas>
-                </div>
-            </div>
 
             <!-- Acquisition Spend -->
             <div style="background: #fafafa; padding: 20px; border-radius: 10px; margin-bottom: 16px;">
@@ -1143,60 +1065,6 @@
         });
 
         // Retention Chart
-        const retentionCtx = document.getElementById('retentionChart').getContext('2d');
-        new Chart(retentionCtx, {
-            type: 'line',
-            data: {
-                labels: ['Week -5', 'Week -4', 'Week -3', 'Week -2', 'Week -1', 'Current'],
-                datasets: [{
-                    label: 'D1 Second Deposit Rate',
-                    data: [38, 39, 40, 41, 38, 42],
-                    borderColor: '#34c759',
-                    backgroundColor: 'rgba(52, 199, 89, 0.1)',
-                    tension: 0.4,
-                    fill: true
-                }, {
-                    label: 'D7 Second Deposit Rate',
-                    data: [25, 26, 27, 28, 26, 28],
-                    borderColor: '#007aff',
-                    backgroundColor: 'rgba(0, 122, 255, 0.1)',
-                    tension: 0.4,
-                    fill: true
-                }, {
-                    label: 'D30 Second Deposit Rate',
-                    data: [15, 16, 17, 18, 17, 18],
-                    borderColor: '#ff9500',
-                    backgroundColor: 'rgba(255, 149, 0, 0.1)',
-                    tension: 0.4,
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'bottom'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 50,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
-                            }
-                        },
-                        grid: { color: '#e5e5e7' }
-                    },
-                    x: {
-                        grid: { display: false }
-                    }
-                }
-            }
-        });
 
         // Engagement Chart
         const engagementCtx = document.getElementById('engagementChart').getContext('2d');
@@ -1253,56 +1121,6 @@
                         min: 0,
                         max: 3,
                         grid: { drawOnChartArea: false }
-                    },
-                    x: {
-                        grid: { display: false }
-                    }
-                }
-            }
-        });
-
-        // Efficiency Chart
-        const efficiencyCtx = document.getElementById('efficiencyChart').getContext('2d');
-        new Chart(efficiencyCtx, {
-            type: 'line',
-            data: {
-                labels: ['Dec 9', 'Dec 16', 'Dec 23', 'Dec 30', 'Jan 6', 'Jan 13', 'Jan 20', 'Jan 27'],
-                datasets: [{
-                    label: 'NGR/GGR Ratio',
-                    data: [58, 62, 65, 68, 72, 64, 66, 72],
-                    borderColor: '#007aff',
-                    backgroundColor: 'rgba(0, 122, 255, 0.1)',
-                    tension: 0.4,
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    annotation: {
-                        annotations: {
-                            box: {
-                                type: 'box',
-                                yMin: 60,
-                                yMax: 75,
-                                backgroundColor: 'rgba(52, 199, 89, 0.1)',
-                                borderWidth: 0
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        min: 50,
-                        max: 80,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
-                            }
-                        },
-                        grid: { color: '#e5e5e7' }
                     },
                     x: {
                         grid: { display: false }
